@@ -14,16 +14,22 @@ get into spark-client container shell
 sudo docker exec -it spark-client bash
 ```
 
+go to spark bin folder
+
+```bash
+cd $SPARK_HOME/bin
+```
+
 start a spark-shell session
 
 ```bash
-$SPARK_HOME/bin/spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 
+spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 
 ```
 
 run file in spark-shell
 
 ```bash
-$SPARK_HOME/bin/spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 -i path/to/file.scala
+spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 -i spark_apps/file.scala
 ```
 
 ## Rutas utiles
