@@ -32,6 +32,10 @@ run file in spark-shell
 spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 -i spark_apps/file.scala
 ```
 
+## Carpeta compartida para subir los archivos
+
+./spark_apps
+
 ## Rutas utiles
 
 - spark-master ui <http://localhost:8080>
