@@ -17,24 +17,42 @@ sudo docker exec -it spark-client bash
 go to spark bin folder
 
 ```bash
-cd $SPARK_HOME/bin
+cd ./spark/bin
 ```
 
 start a spark-shell session
 
 ```bash
-spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 
+spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1
 ```
 
 run file in spark-shell
 
 ```bash
-spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 -i spark_apps/file.scala
+./spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 -i ./app/streaming.scala
 ```
+
+run file in spark-submit
+
+```bash
+./spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 -i ./app/streaming.py
+```
+
+> [!IMPORTANT]
+> instalar pyspark en contenedor con el comando `pip install pyspark`
+
+run producer
+
+```bash
+python .\kafka_producer.py
+```
+
+> [!IMPORTANT]
+> crear entorno virtual e instalar confluent_kafka con el comando `pip install confluent_kafka`
 
 ## Carpeta compartida para subir los archivos
 
-./spark_apps
+./app
 
 ## Rutas utiles
 
