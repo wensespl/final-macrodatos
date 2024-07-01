@@ -1,6 +1,6 @@
 # final-macrodatos
 
-## Iniciar spark cluster
+## Start spark cluster
 
 start cluster containers
 
@@ -39,7 +39,7 @@ run file in spark-submit
 ```
 
 > [!IMPORTANT]
-> instalar pyspark en contenedor con el comando `pip install pyspark`
+> Install pyspark in `spark-client` container with the command `pip install pyspark`
 
 run producer
 
@@ -48,13 +48,13 @@ python .\kafka_producer.py
 ```
 
 > [!IMPORTANT]
-> crear entorno virtual e instalar confluent_kafka con el comando `pip install confluent_kafka`
+> Create python virtual environment and install `confluent_kafka` with command `pip install confluent_kafka`
 
-## Carpeta compartida para subir los archivos
+## Shared folder to upload files
 
 ./app
 
-## Rutas utiles
+## Useful routes
 
 - spark-master ui <http://localhost:8080>
 - spark-worker-1 ui <http://localhost:8081>

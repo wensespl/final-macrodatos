@@ -7,7 +7,7 @@ bootstrap_servers = 'localhost:9092'
 producer = Producer({'bootstrap.servers': bootstrap_servers})
 
 # Example topic and message
-topic = 'streaming'
+topic = 'streaming_topic'
 message = 'erghejstrfjseh'
 
 # Delivery report callback
