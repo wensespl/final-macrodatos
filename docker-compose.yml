@@ -47,6 +47,7 @@ services:
       - 4040:4040
     depends_on:
       - spark-master
+      - kafka
     environment:
       SPARK_MASTER: spark://spark-master:7077
     volumes:
