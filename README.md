@@ -35,7 +35,7 @@ run file in spark-shell
 run file in spark-submit
 
 ```bash
-./spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 -i ./app/streaming.py
+./spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 ./app/streaming.py
 ```
 
 > [!IMPORTANT]
