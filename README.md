@@ -35,7 +35,7 @@ run file in spark-shell
 run file in spark-shell with postgres driver
 
 ```bash
-./spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 --driver-class-path postgresql-42.7.3.jar --jars postgresql-42.7.3.jar -i ./app/streaming.scala
+./spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 --driver-class-path ./app/jars/postgresql-42.7.3.jar --jars ./app/jars/postgresql-42.7.3.jar -i ./app/streaming.scala
 ```
 
 run file in spark-submit
