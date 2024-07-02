@@ -48,6 +48,7 @@ services:
     depends_on:
       - spark-master
       - kafka
+      - postgres
     environment:
       SPARK_MASTER: spark://spark-master:7077
     volumes:
@@ -87,7 +88,7 @@ services:
 
   postgres:
     image: postgres:13
-    container_name: postgres_container
+    container_name: postgres
     networks:
       - spark-cluster-network
     environment:
@@ -98,8 +99,6 @@ services:
       - 5432:5432
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
-    depends_on:
-      - spark-client
 
 networks:
   spark-cluster-network:
