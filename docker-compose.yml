@@ -88,6 +88,8 @@ services:
   postgres:
     image: postgres:13
     container_name: postgres_container
+    networks:
+      - spark-cluster-network
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -96,6 +98,8 @@ services:
       - 5432:5432
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
+    depends_on:
+      - spark-client
 
 networks:
   spark-cluster-network:
