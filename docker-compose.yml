@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   spark-master:
     image: bde2020/spark-master:3.0.1-hadoop3.2
@@ -110,6 +112,33 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - 5050:80
+
+  superset:
+    image: apache/superset
+    container_name: superset
+    networks:
+      - spark-cluster-network
+    environment:
+      SUPERSET_SECRET_KEY: 'thisISaSECRET_1234'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      SUPERSET_DB__URI: postgresql+psycopg2://postgres:postgres@postgres:5432/postgres
+    volumes:
+      - ./superset_home:/app/superset_home
+    ports:
+      - 8088:8088
+    command:
+      - sh
+      - -c
+      - |
+        superset db upgrade &&
+        export FLASK_APP=superset && \
+        flask fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin && \
+        superset init &&
+        superset run -p 8088 -h 0.0.0.0 --with-threads --reload --debugger
 
 networks:
   spark-cluster-network:
