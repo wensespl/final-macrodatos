@@ -74,3 +74,9 @@ Configure superset
 - spark-worker-2 ui <http://localhost:8082>
 - spark-client ui <http://localhost:4040>
 - superset ui <http://localhost:8088/login>
+
+## Useful commands
+
+- start containers `docker compose up -d`
+- Stop containers `docker compose stop`
+- Delete containers `docker compose down`
