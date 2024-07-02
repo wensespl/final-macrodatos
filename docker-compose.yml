@@ -85,6 +85,18 @@ services:
     depends_on:
       - zookeeper
 
+  postgres:
+    image: postgres:13
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
 networks:
   spark-cluster-network:
     name: spark-cluster-network
