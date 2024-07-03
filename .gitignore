@@ -1,2 +1,6 @@
 # Python virtual environment
 env
+
+# Docker compose volumens
+postgres_data
+superset_home
