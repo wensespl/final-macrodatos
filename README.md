@@ -57,6 +57,12 @@ python .\kafka_producer.py
 > [!IMPORTANT]
 > Create python virtual environment and install `confluent_kafka` with command `pip install confluent_kafka`
 
+Import the dashboard in Superset
+
+We go to http://localhost:8088 and enter with the credentials> `user: admin` and `password: admin`. 
+In the `Dashboards` tab, click on the down arrow, and in the new window select the compressed file. 
+To view it, it is necessary to change the IP address of the HOST (Postgres container) in Settings.
+
 ## Optional streaming with Python
 
 Run file in spark-submit
