@@ -35,17 +35,8 @@ Run file in spark-shell
 Run file in spark-shell with postgres driver
 
 ```bash
-./spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 --driver-class-path ./app/jars/postgresql-42.7.3.jar --jars ./app/jars/postgresql-42.7.3.jar -i ./app/streaming.scala
+./spark-shell --conf spark.executor.memory=2G --conf spark.executor.cores=1 --master spark://spark-master:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 --driver-class-path ./app/jars/postgresql-42.7.3.jar --jars ./app/jars/postgresql-42.7.3.jar -i ./app/streaming_to_postgres.scala
 ```
-
-Run file in spark-submit
-
-```bash
-./spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 ./app/streaming.py
-```
-
-> [!IMPORTANT]
-> Install pyspark in `spark-client` container with the command `pip install pyspark`
 
 Run producer
 
@@ -62,6 +53,17 @@ Configure superset
 > Setup your local admin account `docker exec -it superset superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin`
 > Migrate local DB to latest `docker exec -it superset superset db upgrade`
 > Setup roles `docker exec -it superset superset init`
+
+## Optional streaming with Python
+
+Run file in spark-submit
+
+```bash
+./spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 ./app/streaming.py
+```
+
+> [!IMPORTANT]
+> Install pyspark in `spark-client` container with the command `pip install pyspark`
 
 ## Shared folder to upload files
 
