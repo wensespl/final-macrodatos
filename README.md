@@ -1,5 +1,6 @@
 # final-macrodatos
-Proyecto final del curso de Analisi de Macrodatos. Se realiza la extraccion y analisis de documentos de contratos libres de Osinergmin con la ayuda de Kafka, Sprak streaming con Scala y Superset. Los archivos necesarios para realizar las consultas se encuentran dentro de la carpeta app asi como para realizar el envio de los datos con el arhcivo kafka_producer.py
+
+Proyecto final del curso de Analisis de Macrodatos. Se realiza la extraccion y analisis de documentos de contratos libres de Osinergmin con la ayuda de Kafka, Sprak streaming con Scala y Superset. Los archivos necesarios para realizar las consultas se encuentran dentro de la carpeta app asi como para realizar el envio de los datos con el archivo kafka_producer.py
 
 ## Start spark cluster
 
