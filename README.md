@@ -8,6 +8,15 @@ Start cluster containers
 docker-compose up -d
 ```
 
+Configure superset
+
+> [!IMPORTANT]
+> Setup your local admin account `docker exec -it superset superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin` .
+> Migrate local DB to latest `docker exec -it superset superset db upgrade` .
+> Setup roles `docker exec -it superset superset init`
+
+## Run jobs
+
 Get into spark-client container shell
 
 ```bash
@@ -46,13 +55,6 @@ python .\kafka_producer.py
 
 > [!IMPORTANT]
 > Create python virtual environment and install `confluent_kafka` with command `pip install confluent_kafka`
-
-Configure superset
-
-> [!IMPORTANT]
-> Setup your local admin account `docker exec -it superset superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin`
-> Migrate local DB to latest `docker exec -it superset superset db upgrade`
-> Setup roles `docker exec -it superset superset init`
 
 ## Optional streaming with Python
 
